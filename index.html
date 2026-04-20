@@ -1,92 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senzall Dev - Developer Tools Hub</title>
-  <meta name="description" content="Senzall Dev builds developer tools and open-source projects. Explore emprise, Message Hub, RetroCode, and ENIGMA 9000.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senzall Dev — Developer Tools & Technology</title>
+  <meta name="description" content="Developer tools by Senzall. emprise AI CLI, Message Hub multi-channel messaging, RetroCode 8-bit IDE, ENIGMA 9000 server admin." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void:   '#0a0812',
+            deep:   '#100d1f',
+            surface:'#16122a',
+            card:   '#1e1836',
+            border: '#2e2650',
+            gold:   '#b8922a',
+            'gold-light': '#d4aa4a',
+            'gold-dim':   '#7a6020',
+            cream: '#e8d5a3',
+            teal: '#58d1c9',
+            'msg-blue': '#58a6ff',
+          },
+          fontFamily: {
+            display: ['Georgia', 'Cambria', 'serif'],
+            body:    ['system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0a0812; }
+    .glow-purple { text-shadow: 0 0 20px rgba(168,85,247,0.8), 0 0 40px rgba(168,85,247,0.4); }
+    .glow-gold { text-shadow: 0 0 16px rgba(184,146,42,0.7), 0 0 32px rgba(184,146,42,0.3); }
+    .card-glow {
+      box-shadow: 0 0 0 1px rgba(168,85,247,0.15), 0 4px 32px rgba(124,58,237,0.1);
+      transition: all 0.3s;
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 0 1px rgba(168,85,247,0.4), 0 4px 48px rgba(124,58,237,0.25);
+      transform: translateY(-2px);
+    }
+    .crest-glow {
+      filter: drop-shadow(0 0 32px rgba(168,85,247,0.5)) drop-shadow(0 0 64px rgba(124,58,237,0.3));
+    }
+    .hero-bg {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(109,40,217,0.15) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 40% at 50% 50%, rgba(168,85,247,0.05) 0%, transparent 60%);
+    }
+    .divider { background: linear-gradient(90deg, transparent, #b8922a, transparent); height: 1px; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-8px); }
+    }
+    .float { animation: float 6s ease-in-out infinite; }
+    .icon-glow-teal { filter: drop-shadow(0 0 12px rgba(88,209,201,0.5)); }
+    .icon-glow-blue { filter: drop-shadow(0 0 12px rgba(88,166,255,0.5)); }
+    .icon-glow-amber { filter: drop-shadow(0 0 12px rgba(233,207,85,0.5)); }
+    .icon-glow-red { filter: drop-shadow(0 0 12px rgba(248,81,73,0.5)); }
+  </style>
 </head>
-<body>
+<body class="text-cream font-body antialiased">
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="logo">S</div>
-      <h1>Senzall Dev</h1>
-      <p class="tagline">Building the future</p>
-      <p class="subtitle">Developer tools, AI integrations, and open-source projects crafted for the modern stack.</p>
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-void/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <img src="crest.png" alt="Senzall" class="h-8 w-8 rounded" />
+        <span class="font-display font-bold text-cream text-sm tracking-wide">Senzall Dev</span>
+      </a>
+      <div class="flex items-center gap-4 sm:gap-6 text-sm">
+        <a href="https://senzall.com" class="text-cream/60 hover:text-cream transition">Gaming</a>
+        <a href="https://emprise.dev" class="text-cream/60 hover:text-teal transition">emprise</a>
+        <a href="https://messagehub.dev" class="text-cream/60 hover:text-msg-blue transition">Message Hub</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- PROJECTS -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <div class="card-grid">
+  <!-- Hero -->
+  <section class="hero-bg pt-28 pb-16 text-center px-4">
+    <img src="crest.png" alt="Senzall" class="w-32 sm:w-40 mx-auto mb-8 float crest-glow" />
+    <h1 class="font-display text-4xl sm:text-5xl font-bold text-purple-300 glow-purple mb-4">
+      Developer Tools
+    </h1>
+    <p class="text-cream/70 text-lg max-w-2xl mx-auto mb-2">
+      AI assistants, messaging platforms, retro IDEs, and server tools.
+    </p>
+    <p class="text-gold-dim text-sm font-display italic">Built with care by Senzall</p>
+  </section>
 
-      <a href="https://emprise.dev" class="card" style="--accent: #58d1c9">
-        <div class="card-header">
-          <h3>emprise</h3>
-          <span class="card-subtitle">AI CLI Assistant</span>
+  <div class="divider max-w-4xl mx-auto"></div>
+
+  <!-- Projects -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="font-display text-2xl text-gold glow-gold text-center mb-12">Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- emprise -->
+      <a href="https://emprise.dev" class="card-glow bg-card rounded-2xl p-6 block group">
+        <div class="flex items-start gap-4 mb-4">
+          <img src="emprise-icon.svg" alt="emprise" class="w-16 h-16 rounded-xl icon-glow-teal" />
+          <div>
+            <h3 class="text-xl font-bold text-teal group-hover:glow-purple transition">emprise</h3>
+            <p class="text-cream/50 text-sm">AI CLI Assistant</p>
+          </div>
         </div>
-        <p>Cross-platform AI CLI with 43+ tools. Connect to Ollama, GitHub Models, OpenAI, Anthropic.</p>
-        <span class="card-link">emprise.dev</span>
+        <p class="text-cream/70 text-sm leading-relaxed mb-4">
+          Cross-platform AI command-line assistant with 43+ tools.
+          Connect to Ollama, GitHub Models, OpenAI, or Anthropic.
+          Named conversations, plugin system, safety guards.
+          Signed and notarized for macOS.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-teal/10 text-teal border border-teal/20">Go</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-teal/10 text-teal border border-teal/20">43 Tools</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-teal/10 text-teal border border-teal/20">Mac / Linux / Win</span>
+        </div>
       </a>
 
-      <a href="https://messagehub.dev" class="card" style="--accent: #58a6ff">
-        <div class="card-header">
-          <h3>Message Hub</h3>
-          <span class="card-subtitle">Multi-Channel AI Messaging</span>
+      <!-- Message Hub -->
+      <a href="https://messagehub.dev" class="card-glow bg-card rounded-2xl p-6 block group">
+        <div class="flex items-start gap-4 mb-4">
+          <img src="morselhub-icon.png" alt="Message Hub" class="w-16 h-16 rounded-xl icon-glow-blue" />
+          <div>
+            <h3 class="text-xl font-bold text-msg-blue group-hover:glow-purple transition">Message Hub</h3>
+            <p class="text-cream/50 text-sm">Multi-Channel AI Messaging</p>
+          </div>
         </div>
-        <p>AI chat through Teams, GroupMe, SMS, and web. Local LLMs on your own server.</p>
-        <span class="card-link">messagehub.dev</span>
+        <p class="text-cream/70 text-sm leading-relaxed mb-4">
+          AI chat through Microsoft Teams, GroupMe, SMS, and web.
+          Local LLMs via Ollama on your own server. Knowledge base,
+          web search, ENIGMA 9000 server admin chatbot.
+          1,145-game retro arcade built in.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-msg-blue/10 text-msg-blue border border-msg-blue/20">Python</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-msg-blue/10 text-msg-blue border border-msg-blue/20">Teams</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-msg-blue/10 text-msg-blue border border-msg-blue/20">GroupMe</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-msg-blue/10 text-msg-blue border border-msg-blue/20">SMS</span>
+        </div>
       </a>
 
-      <a href="https://github.com/senzalldev/retrocode-app" class="card" style="--accent: #e9cf55">
-        <div class="card-header">
-          <h3>RetroCode</h3>
-          <span class="card-subtitle">8-Bit IDE</span>
+      <!-- RetroCode -->
+      <a href="https://github.com/senzalldev/retrocode-app" class="card-glow bg-card rounded-2xl p-6 block group">
+        <div class="flex items-start gap-4 mb-4">
+          <img src="retrocode-icon.png" alt="RetroCode" class="w-16 h-16 rounded-xl icon-glow-amber" />
+          <div>
+            <h3 class="text-xl font-bold text-yellow-400 group-hover:glow-purple transition">RetroCode</h3>
+            <p class="text-cream/50 text-sm">8-Bit IDE</p>
+          </div>
         </div>
-        <p>Assembly &amp; BASIC from 1980. Desktop IDE with AI integration for learning retro programming.</p>
-        <span class="card-link">GitHub</span>
+        <p class="text-cream/70 text-sm leading-relaxed mb-4">
+          Assembly and BASIC from 1980. A desktop IDE inspired by the
+          Radio Shack Microcomputer Trainer. Three modes: Assembly, BASIC,
+          and Code. AI integration with Claude and GitHub Copilot.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">Desktop</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">Assembly</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">BASIC</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">AI</span>
+        </div>
       </a>
 
-      <a href="https://ai.senzall.net/enigma" class="card" style="--accent: #f85149">
-        <div class="card-header">
-          <h3>ENIGMA 9000</h3>
-          <span class="card-subtitle">AI Server Admin</span>
+      <!-- ENIGMA 9000 -->
+      <a href="https://ai.senzall.net/enigma" class="card-glow bg-card rounded-2xl p-6 block group">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-16 h-16 rounded-xl bg-red-900/30 border border-red-500/30 flex items-center justify-center icon-glow-red">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-900" style="box-shadow: 0 0 20px rgba(255,0,0,0.4);"></div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-red-400 group-hover:glow-purple transition">ENIGMA 9000</h3>
+            <p class="text-cream/50 text-sm">AI Server Admin</p>
+          </div>
         </div>
-        <p>HAL 9000-inspired server chatbot with 54+ tools, live hardware monitoring, retro arcade.</p>
-        <span class="card-link">ai.senzall.net/enigma</span>
+        <p class="text-cream/70 text-sm leading-relaxed mb-4">
+          HAL 9000-inspired server chatbot. 54+ tools for system monitoring,
+          log analysis, network diagnostics. Live CPU heatmap, temperature
+          monitoring, NVMe health. Knows about Space Odyssey and Infocom games.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-red-400/10 text-red-400 border border-red-400/20">54 Tools</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-red-400/10 text-red-400 border border-red-400/20">Live Metrics</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-red-400/10 text-red-400 border border-red-400/20">HAL 9000</span>
+        </div>
       </a>
 
     </div>
   </section>
 
-  <!-- TECH STACK -->
-  <section class="tech-stack">
-    <h2>Tech Stack</h2>
-    <div class="tech-list">
-      <span class="tech-tag">Go</span>
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">FastAPI</span>
-      <span class="tech-tag">Cloudflare Workers</span>
-      <span class="tech-tag">TypeScript</span>
-      <span class="tech-tag">SQLite</span>
-      <span class="tech-tag">Docker</span>
-      <span class="tech-tag">Linux</span>
+  <div class="divider max-w-4xl mx-auto"></div>
+
+  <!-- Tech Stack -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 text-center">
+    <h2 class="font-display text-2xl text-gold glow-gold mb-8">Tech Stack</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Go</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Python</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">FastAPI</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">TypeScript</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Cloudflare Workers</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">SQLite</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Ollama</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Bubble Tea</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">EmulatorJS</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">ScummVM WASM</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Caddy</span>
+      <span class="px-4 py-2 rounded-full bg-surface border border-border text-cream/70 text-sm">Linux</span>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <nav class="footer-links">
-      <a href="https://senzall.com">senzall.com</a>
-      <a href="https://github.com/senzalldev">GitHub</a>
-      <a href="https://emprise.dev">emprise.dev</a>
-      <a href="https://messagehub.dev">messagehub.dev</a>
-    </nav>
-    <p class="copyright">Senzall Dev</p>
+  <div class="divider max-w-4xl mx-auto"></div>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-4 sm:px-6 py-12 text-center">
+    <img src="crest.png" alt="Senzall" class="w-12 mx-auto mb-4 opacity-40" />
+    <div class="flex justify-center gap-6 text-sm text-cream/40 mb-4">
+      <a href="https://senzall.com" class="hover:text-cream/70 transition">senzall.com</a>
+      <a href="https://emprise.dev" class="hover:text-teal transition">emprise.dev</a>
+      <a href="https://messagehub.dev" class="hover:text-msg-blue transition">messagehub.dev</a>
+      <a href="https://github.com/senzalldev" class="hover:text-cream/70 transition">GitHub</a>
+    </div>
+    <p class="text-cream/20 text-xs">Built by Senzall</p>
   </footer>
 
 </body>
