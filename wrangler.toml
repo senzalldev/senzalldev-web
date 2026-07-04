@@ -1,0 +1,16 @@
+# Cloudflare Worker (static assets) for senzall.dev — Senzall Developer Tools Hub.
+# Deploy:  npx wrangler deploy
+name = "senzalldev-web"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "public"
+not_found_handling = "single-page-application"
+
+[[routes]]
+pattern = "senzall.dev"
+custom_domain = true
+
+[[routes]]
+pattern = "www.senzall.dev"
+custom_domain = true
